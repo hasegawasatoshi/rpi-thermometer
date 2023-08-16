@@ -1,6 +1,6 @@
 # rpi-thermometer
 
-## Usage
+## Installation
 
 Install packages
 ```
@@ -30,9 +30,15 @@ pip install autopep8
 pip install isort
 ```
 
-Monitoring temperature and humidity
+## Monitoring temperature and humidity with DHT22
 ```
 python dht22.py --debug &
-redis-cli --raw keys "dht22:*"
+redis-cli GET dht22:temperature
+redis-cli GET dht22:humidity
 ```
 
+## Monitoring CPU temperature
+```
+python cpu_temp.py --debug &
+redis-cli GET cpu:temperature
+```

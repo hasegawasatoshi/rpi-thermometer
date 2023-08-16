@@ -68,7 +68,7 @@ def mainloop(sensor, db):
                 db.write("dht22:temperature", temperature)
                 db.write("dht22:humidity", humidity)
                 logger.debug("Temperature: %0.1f *C / Humidity: %0.1f %%" % (temperature, humidity))
-            time.sleep(CONFIG.get('app').get('monitoring').get('intervals'))
+            time.sleep(CONFIG.get('dht22').get('monitoring').get('intervals'))
 
     except KeyboardInterrupt:
         logger.error('Stopped by keyboard imput (ctrl-c)')

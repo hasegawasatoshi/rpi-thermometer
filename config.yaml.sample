@@ -3,6 +3,6 @@ redis:
   port: 6379
   db: 0
   expire: 10
-app:
+dht22:
   monitoring:
     intervals:  3
