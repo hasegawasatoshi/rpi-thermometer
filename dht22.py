@@ -65,8 +65,8 @@ def mainloop(sensor, db):
             if readings is not None:
                 temperature = readings.get("temperature")
                 humidity = readings.get("humidity")
-                db.write("dht22:temperature", temperature, )
-                db.write("dht22:humidity", humidity, )
+                db.write("dht22:temperature", temperature)
+                db.write("dht22:humidity", humidity)
                 logger.debug("Temperature: %0.1f *C / Humidity: %0.1f %%" % (temperature, humidity))
             time.sleep(CONFIG.get('app').get('monitoring').get('intervals'))
 
