@@ -20,7 +20,7 @@ class TerminatedException(Exception):
 
 
 def signal_handler(signum, frame):
-    logging.info('Catched signal [ %d ].' % (signum))
+    logger.info('Catched signal [ %d ].' % (signum))
     raise TerminatedException
 
 
@@ -58,7 +58,7 @@ class Redis:
         try:
             self._conn.set(key, value, ex)
         except redis.exceptions.ConnectionError as e:
-            logging.error(f'{e}')
+            logger.error(f'{e}')
             raise e
 
 
