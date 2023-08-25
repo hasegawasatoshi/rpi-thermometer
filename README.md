@@ -6,7 +6,7 @@ Install packages
 ```
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install libgpiod2 redis-server 
+sudo apt-get -y install libgpiod2 redis-server python3-venv
 ```
 
 Create virtual environment
