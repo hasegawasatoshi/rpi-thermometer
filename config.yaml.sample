@@ -13,3 +13,8 @@ DS18B20:
 cpu:
   monitoring:
     intervals: 3
+historian:
+  monitoring:
+    intervals: 60
+    keys: ["dht22:humidity", "dht22:temperature", "DS18B20:temperature", "cpu:temperature"]
+  output: "/opt/termometer/logs"
