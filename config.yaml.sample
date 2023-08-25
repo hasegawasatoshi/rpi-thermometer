@@ -6,3 +6,6 @@ redis:
 dht22:
   monitoring:
     intervals:  3
+cpu:
+  monitoring:
+    intervals: 3
