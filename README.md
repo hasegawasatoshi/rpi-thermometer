@@ -37,6 +37,12 @@ redis-cli GET dht22:temperature
 redis-cli GET dht22:humidity
 ```
 
+## Monitoring temperature with DS18B20
+```
+python DS18B20.py --debug &
+redis-cli GET DS18B20:temperature
+```
+
 ## Monitoring CPU temperature
 ```
 python cpu_temp.py --debug &
@@ -51,11 +57,15 @@ sudo pip install -r requirements.txt
 sudo install -v -o root -g root -m 644 -t /opt/termometer/etc config.yaml
 sudo install -v -o root -g root -m 644 -t /opt/termometer/bin dht22.py
 sudo install -v -o root -g root -m 644 -t /opt/termometer/bin cpu_temperature.py
+sudo install -v -o root -g root -m 644 -t /opt/termometer/bin DS18B20.py
 sudo install -v -o root -g root -m 644 -t /usr/lib/systemd/system dht22.service
 sudo install -v -o root -g root -m 644 -t /usr/lib/systemd/system cpu_temperature.service
+sudo install -v -o root -g root -m 644 -t /usr/lib/systemd/system DS18B20.service
+sudo systemctl daemon-reload
 sudo systemctl enable dht22.service
 sudo systemctl enable cpu_temperature.service
-sudo systemctl daemon-reload
+sudo systemctl enable DS18B20.service
 sudo systemctl start dht22.service
 sudo systemctl start cpu_temperature.service
+sudo systemctl start DS18B20.service
 ```
