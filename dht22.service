@@ -1,0 +1,15 @@
+[Unit]
+Description=DHT22 monitoring service
+After=redis-server.service
+
+[Service]
+WorkingDirectory=/opt/termometer
+ExecStart=python /opt/termometer/bin/dht22.py --config /opt/termometer/etc/config.yaml
+Type=simple
+User=root
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
