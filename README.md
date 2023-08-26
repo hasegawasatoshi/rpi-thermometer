@@ -1,6 +1,6 @@
 # rpi-thermometer
 
-## Installation
+## Setup
 
 Install packages
 ```
