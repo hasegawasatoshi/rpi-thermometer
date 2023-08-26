@@ -1,0 +1,20 @@
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  expire: 10
+dht22:
+  monitoring:
+    intervals:  3
+DS18B20:
+  monitoring:
+    intervals:  3
+  path: "/sys/bus/w1/devices/28-030497941e1e/temperature"
+cpu:
+  monitoring:
+    intervals: 3
+historian:
+  monitoring:
+    intervals: 60
+    keys: ["dht22:humidity", "dht22:temperature", "DS18B20:temperature", "cpu:temperature"]
+  output: "/opt/termometer/logs"
