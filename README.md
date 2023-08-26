@@ -54,7 +54,7 @@ redis-cli GET cpu:temperature
 python historian.py --debug
 ```
 
-## Install
+## Deploy
 ```
 sudo mkdir -p /opt/termometer/bin
 sudo mkdir -p /opt/termometer/etc
